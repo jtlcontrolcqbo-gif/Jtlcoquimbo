@@ -8,7 +8,7 @@ const dots=region.querySelector('.activity-dots');
 const announcement=region.querySelector('.activity-announcement');
 const motion=matchMedia('(prefers-reduced-motion: reduce)');
 let current=0,paused=motion.matches,hover=false,visible=false,timer;
-const labels=slides.map(el=>el.classList.contains('school-banner')?'Inicio Escuela Avanzada':'Seminario: El llamado a plantar nuevas iglesias');
+const labels=slides.map(el=>el.dataset.activityLabel||(el.classList.contains('school-banner')?'Inicio Escuela Avanzada':'Seminario: El llamado a plantar nuevas iglesias'));
 region.classList.add('carousel-ready');controls.hidden=slides.length<2;
 const buttons=slides.map((slide,i)=>{slide.setAttribute('role','group');slide.setAttribute('aria-roledescription','diapositiva');slide.setAttribute('aria-label',(i+1)+' de '+slides.length+': '+labels[i]);const b=document.createElement('button');b.type='button';b.textContent=String(i+1);b.setAttribute('aria-label','Mostrar '+labels[i]);b.addEventListener('click',()=>{paused=true;show(i,true);});dots.append(b);return b;});
 function schedule(){clearTimeout(timer);pause.textContent=paused?'Reanudar':'Pausar';if(slides.length>1&&!paused&&!hover&&visible&&!document.hidden)timer=setTimeout(()=>show((current+1)%slides.length,false),7000);}
