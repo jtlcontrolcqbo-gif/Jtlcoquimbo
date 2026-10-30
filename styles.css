@@ -96,3 +96,194 @@ footer{align-items:flex-start}.footer-links{gap:16px 28px}.social-links{gap:12px
 .school-module{margin:26px 0;padding:clamp(20px,3vw,30px);background:#edf7fb;border-left:4px solid #3fc5e9;border-radius:0 10px 10px 0}
 .school-module h3{font-size:clamp(22px,2.5vw,28px);line-height:1.3;letter-spacing:-.5px;margin:0 0 18px}
 .school-module ol{padding-left:24px;margin:18px 0}.school-module li{padding-left:4px;margin:10px 0}.school-module p:last-child{margin-bottom:0}
+
+/* Etapa 1: portada y agenda adaptables, identidad azul y celeste. */
+img{max-width:100%}
+.home-cover{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#eaf7fc;align-items:stretch}
+.home-cover-copy{padding:clamp(28px,5vw,80px);align-self:center;min-width:0}
+.home-cover h1{font-size:clamp(42px,5.6vw,84px);line-height:1.08;letter-spacing:-.045em;overflow-wrap:anywhere}
+.home-cover h1 em{color:#126383}.home-cover>img{display:block;width:100%;height:100%;min-height:420px;object-fit:cover}
+.home-services{background:#edf7fb}.home-services .group-grid{max-width:900px}.service-note{max-width:850px;margin:28px 0}
+.section img{display:block;height:auto}.jtl-wa-dialog{max-height:85vh;max-height:85dvh}
+@media(max-width:1100px){header nav{max-height:calc(100vh - 100px);max-height:calc(100dvh - 100px);overflow-y:auto;overscroll-behavior:contain}}
+@media(max-width:720px){
+ header{gap:10px;padding-inline:16px}header .brand-horizontal{flex:0 1 250px;width:auto;max-width:calc(100% - 90px)}
+ header .menu{min-height:44px;min-width:76px;justify-content:center}
+ .home-cover{grid-template-columns:minmax(0,1fr)}.home-cover-copy{padding:36px 20px}
+ .home-cover h1{font-size:clamp(40px,11vw,64px)}.home-cover .lead{font-size:20px}
+ .home-cover>img{min-height:0;height:auto;aspect-ratio:3/2;object-fit:cover}
+ .page-intro h1{font-size:clamp(34px,9vw,48px);line-height:1.12}
+ .section,.page-intro,.visit{padding-inline:20px}.section{padding-block:44px}
+ h1,h2,h3{overflow-wrap:anywhere}.lead{font-size:20px}
+ .event,.event:has(.seminar-poster){grid-template-columns:minmax(0,1fr);gap:24px}
+ .school-date{flex-wrap:wrap}.school-date>div{overflow-wrap:anywhere}
+ .meeting-title>span{white-space:normal}.actions{align-items:stretch}.actions .button{justify-content:center;flex:1 1 180px;text-align:center}
+ .carousel-ready .upcoming-grid,.carousel-ready .upcoming-grid>article{min-height:0}
+ .jtl-wa-launch{max-width:calc(100% - 32px);right:16px;font-size:14px}
+ .jtl-wa-dialog{width:calc(100% - 32px);padding:20px;max-width:390px}
+ footer{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}
+}
+.home-agenda>details>summary{cursor:pointer;font-size:clamp(22px,4vw,32px);font-weight:700;color:#253260;min-height:44px}.home-agenda>details>.section{padding-inline:0}.home-agenda{border-top:1px solid #dce6ee}
+
+/* Fotografía de portada: proporción original y texto en un panel separado. */
+.home-cover{align-items:center}
+.home-cover>img{width:100%;height:auto;min-height:0;aspect-ratio:4/3;object-fit:contain;align-self:center}
+@media(max-width:720px){.home-cover>img{width:100%;height:auto;min-height:0;aspect-ratio:4/3;object-fit:contain}}
+/* Portada móvil compacta. El área inferior reserva espacio para contacto. */
+@media(max-width:720px){
+ body:has(.home-cover){height:calc(100vh - 64px - env(safe-area-inset-bottom,0px));height:calc(100dvh - 64px - env(safe-area-inset-bottom,0px));overflow-y:auto;overscroll-behavior-y:contain;scroll-padding-top:80px}
+ html:has(.home-cover){height:100%;overflow:hidden}
+ body:has(.home-cover)::after{content:"";position:fixed;left:0;right:0;bottom:0;height:calc(64px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid #d4e5ee;z-index:999;pointer-events:none}
+ body:has(.home-cover) header{min-height:72px;height:auto;padding:8px 16px;gap:12px}
+ body:has(.home-cover) header .brand-horizontal{flex:0 1 210px;width:210px;max-width:calc(100% - 88px)}
+ .home-cover-copy{padding:18px 20px 20px;color:#253260}
+ .home-cover-copy .eyebrow{font-size:11px;line-height:1.4;letter-spacing:1.2px;margin-bottom:8px;color:#253260}
+ .home-cover h1{font-size:clamp(36px,10vw,46px);line-height:1.06;letter-spacing:-.04em;margin-bottom:10px;color:#253260}
+ .home-cover h1 em{color:#126383}
+ .home-cover .lead{font-size:17px;line-height:1.4;margin-bottom:8px;color:#253260}
+ .home-cover-copy>p:not(.eyebrow):not(.lead){font-size:14px;line-height:1.4;margin-bottom:14px;color:#344363}
+ .home-cover .actions{gap:10px;flex-wrap:wrap}
+ .home-cover .actions .button{flex:1 1 120px;min-width:0;min-height:46px;padding:10px 12px;font-size:14px;line-height:1.4;text-align:center;justify-content:center}
+ .home-cover>img{width:100%;height:auto;min-height:0;aspect-ratio:4/3;object-fit:contain}
+ body:has(.home-cover) .jtl-wa-launch{position:fixed;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));min-height:44px;max-width:calc(100% - 24px);padding:10px 14px;border-radius:22px;font-size:12px;line-height:24px;box-shadow:0 2px 8px #10244b18;z-index:1000}
+}
+/* Agenda móvil: estilos limitados a esta página, sin alterar escritorio. */
+@media(max-width:720px){
+ .agenda-page header{min-height:72px;height:auto;padding:8px 16px;gap:12px}
+ .agenda-page header .brand-horizontal{flex:0 1 210px;width:210px;max-width:calc(100% - 88px)}
+ .agenda-page .page-intro{padding:20px 20px 16px;background:#eaf7fc}
+ .agenda-page .page-intro .eyebrow{margin-bottom:8px;letter-spacing:1px;font-size:11px;color:#253260}
+ .agenda-page .page-intro h1{font-size:clamp(32px,8.5vw,40px);line-height:1.08;margin:8px 0 12px;color:#253260}
+ .agenda-page .page-intro .lead{font-size:16px;line-height:1.45;color:#253260;margin:0}
+ .agenda-page main>.section{padding:28px 20px}
+ .agenda-page main>#segundo-servicio{padding-top:20px;border-top:3px solid #3fc5e9;background:#f2f9fc}
+ .agenda-page main .eyebrow,.agenda-page .card-number{color:#253260;font-size:11px;letter-spacing:.8px;margin-bottom:10px}
+ .agenda-page main h2{font-size:clamp(28px,7.5vw,36px);line-height:1.15;margin-bottom:14px;color:#253260}
+ .agenda-page main h2 em,.agenda-page .meeting-time{color:#253260}
+ .agenda-page main .lead{font-size:17px;line-height:1.5;margin-bottom:18px;color:#253260}
+ .agenda-page .group-grid{gap:12px}
+ .agenda-page .group-card{padding:18px;border-color:#bfd4e2;border-radius:10px;color:#253260}
+ .agenda-page .group-card h3{font-size:24px;line-height:1.2;margin:10px 0 12px;color:#253260}
+ .agenda-page .group-card p{font-size:15px;line-height:1.5;margin-bottom:12px;color:#253260}
+ .agenda-page #segundo-servicio .group-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .agenda-page #segundo-servicio .group-card:last-child{grid-column:1/-1}
+ .agenda-page #segundo-servicio .group-card h3{font-size:clamp(22px,6vw,28px)}
+ .agenda-page main img{display:block;max-width:100%;height:auto;max-height:none;object-fit:contain}
+ .agenda-page main>.section>img{width:100%;margin-bottom:16px!important;border-radius:10px!important}
+ .agenda-page main .actions{gap:10px;margin-top:18px!important}
+ .agenda-page main .button{min-height:46px;padding:11px 14px;font-size:14px;line-height:1.4;justify-content:center;text-align:center}
+ .agenda-page .school-banner{padding:22px 18px}.agenda-page .school-banner .eyebrow,.agenda-page .school-banner h2{color:#fff}
+ .agenda-page .school-banner h2 em{color:#80dcf4}.agenda-page .school-start{margin-top:20px}
+ .agenda-page .jtl-wa-launch{position:static;display:block;width:calc(100% - 40px);max-width:360px;min-height:46px;margin:0 auto calc(20px + env(safe-area-inset-bottom,0px));padding:11px 16px;border-radius:10px;font-size:14px;line-height:1.5;box-shadow:none}
+ .agenda-page footer{padding-bottom:24px}
+}
+@media(max-width:350px){
+ .agenda-page #segundo-servicio .group-grid{grid-template-columns:minmax(0,1fr)}
+}
+/* Reorganización exclusiva de Agenda; contenido disponible sin JavaScript. */
+.agenda-page .agenda-category{padding:0;min-width:0}
+.agenda-page .agenda-category-heading{padding:40px clamp(20px,7vw,126px) 20px;border-top:1px solid #c8dce9;background:#eaf7fc;color:#253260}
+.agenda-page .agenda-category-heading h2{font-size:clamp(28px,3.2vw,44px);margin:0 0 12px;line-height:1.15;color:#253260}
+.agenda-page .agenda-category-heading .eyebrow{margin-bottom:8px;color:#253260}
+.agenda-page .agenda-category-heading p:last-child{margin-bottom:0}
+.agenda-page .agenda-category .section{padding-block:40px}
+.agenda-page #segundo-servicio{border-top:3px solid #3fc5e9;background:#f2f9fc}
+.agenda-page .agenda-category img{width:100%;height:auto;object-fit:contain}
+.agenda-page .agenda-history{background:#f5f8fb}
+.agenda-page .agenda-date-note{padding:16px 7%;color:#253260}
+.agenda-page .agenda-event-status{font-size:12px;font-weight:700;color:#253260;letter-spacing:1px;margin-bottom:16px}
+.agenda-page .school-module-current{padding:20px 0;border-block:1px solid #ffffff55}
+.agenda-page .school-module-current>span{font-size:12px;letter-spacing:1px;color:#80dcf4}
+.agenda-page .school-module-current h3{font-size:clamp(26px,4vw,40px);line-height:1.2;margin:12px 0;color:#fff}
+.agenda-page .school-module-current p{margin-bottom:0;color:#fff}
+@media(max-width:720px){
+ .agenda-page main>.agenda-category{padding:0}
+ .agenda-page .agenda-category-heading{padding:20px 20px 14px}
+ .agenda-page .agenda-category-heading h2{font-size:28px}
+ .agenda-page .agenda-category .section{padding:24px 20px}
+ .agenda-page .agenda-category .section>img{margin-bottom:16px!important;border-radius:10px!important}
+ .agenda-page .agenda-category #segundo-servicio{padding-top:20px}
+}
+/* Agenda simplificada: sin espacios reservados para anuncios finalizados. */
+.agenda-page .agenda-category[hidden],.agenda-page [data-visible-until][hidden]{display:none!important}
+.agenda-page #encuentros-habituales .meeting-time{white-space:normal;line-height:1.5;font-size:18px}
+/* Oración permanente: estilos exclusivos de los encuentros de Agenda. */
+/* Oración de Victoria utiliza el mismo diseño que las otras tarjetas habituales. */
+.agenda-page .prayer-victory .card-number,.agenda-page .prayer-victory h3,.agenda-page .prayer-victory p{color:#253260}
+.agenda-page .agenda-prayer-note{padding:0 clamp(20px,7vw,126px) 40px}
+.agenda-page .agenda-prayer-message{margin:0;padding:24px;border-left:4px solid #3fc5e9;border-radius:0 10px 10px 0;background:#eaf7fc;color:#253260;font-size:clamp(18px,2vw,23px);font-weight:600;line-height:1.5}
+@media(max-width:720px){.agenda-page .agenda-prayer-note{padding:0 20px 24px}.agenda-page .agenda-prayer-message{padding:18px;font-size:18px}}
+/* Sistema uniforme de reuniones habituales, exclusivo de Agenda. */
+.agenda-page #encuentros-habituales .group-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+.agenda-page #encuentros-habituales .group-card{background:#fff;border:1px solid #c8d9e5;border-radius:10px;padding:26px;box-shadow:none;color:#253260;min-width:0}
+.agenda-page #encuentros-habituales .group-card .card-number{display:block;font-size:12px;font-weight:600;line-height:1.5;letter-spacing:.8px;color:#405372;margin:0 0 12px}
+.agenda-page #encuentros-habituales .group-card h3{font-size:26px;font-weight:600;line-height:1.25;letter-spacing:-.5px;color:#253260;margin:0 0 16px;text-transform:none}
+.agenda-page #encuentros-habituales .group-card p{font-size:16px;line-height:1.6;color:#405372;margin:0 0 12px}
+.agenda-page #encuentros-habituales .group-card p:last-child{margin-bottom:0}
+.agenda-page #encuentros-habituales .group-card .meeting-time{font-size:16px;font-weight:600;line-height:1.5;letter-spacing:0;color:#253260;white-space:normal}
+/* La formación permanente recibe un acabado sobrio; el estreno conserva su destacado. */
+.agenda-page #escuela-avanzada .school-banner{background:#fff;border:1px solid #c8d9e5;border-radius:10px;padding:26px;color:#253260;max-width:none;box-shadow:none}
+.agenda-page #escuela-avanzada .school-banner h2{font-size:28px;line-height:1.2;margin-bottom:18px;color:#253260}
+.agenda-page #escuela-avanzada .school-banner h2 em{color:#253260}
+.agenda-page #escuela-avanzada .school-start{font-size:12px;letter-spacing:.8px;color:#405372;margin:18px 0 10px}
+.agenda-page #escuela-avanzada .online-badge{background:#eaf7fc;color:#253260}
+.agenda-page #escuela-avanzada .school-module-current{border-color:#c8d9e5}
+.agenda-page #escuela-avanzada .school-module-current>span{color:#405372}
+.agenda-page #escuela-avanzada .school-module-current h3{font-size:26px;color:#253260}
+.agenda-page #escuela-avanzada .school-banner p{color:#405372;font-size:16px}
+.agenda-page #escuela-avanzada .button.light{background:#253260;color:#fff}
+.agenda-page .agenda-prayer-message{background:#f5f8fb;border:1px solid #c8d9e5;border-radius:10px;color:#253260;font-size:18px;font-weight:500}
+@media(max-width:720px){
+ .agenda-page #encuentros-habituales .group-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+ .agenda-page #encuentros-habituales .group-card,.agenda-page #escuela-avanzada .school-banner{padding:20px}
+ .agenda-page #encuentros-habituales .group-card h3{font-size:24px;margin-bottom:14px}
+ .agenda-page #encuentros-habituales .group-card p{font-size:15px}
+}
+/* Las cinco reuniones comparten exactamente el mismo sistema de tarjeta. */
+.agenda-page #encuentros-habituales .group-card .habitual-schedule{color:#253260;line-height:1.6}
+.agenda-page #encuentros-habituales .group-card [hidden]{display:none!important}
+.agenda-page #encuentros-habituales .group-card .button{align-self:flex-start;margin-top:auto;background:transparent;color:#253260;border:1px solid #253260;min-height:44px}
+/* Acabado visual exclusivo de Agenda: retícula, contraste y pie organizado. */
+.agenda-page{color:#253260}
+.agenda-page main p{color:#374151}
+.agenda-page main h1,.agenda-page main h2,.agenda-page main h3{color:#253260}
+.agenda-page main .page-intro{padding-block:32px}
+.agenda-page main .page-intro h1{margin-block:12px 16px}
+.agenda-page .agenda-category-heading{padding-block:24px 16px}
+.agenda-page .agenda-category-heading h2{margin-bottom:0}
+.agenda-page .agenda-category .section{padding-block:28px}
+.agenda-page #encuentros-habituales .group-grid{gap:20px}
+.agenda-page #encuentros-habituales .group-card{padding:24px}
+.agenda-page #encuentros-habituales .group-card p,.agenda-page #encuentros-habituales .group-card .card-number{color:#374151}
+.agenda-page #encuentros-habituales .group-card h3{margin-bottom:12px}
+.agenda-page .agenda-prayer-tile{display:flex;align-items:center;min-width:0;padding:24px;background:#f5f8fb;border:1px solid #c8d9e5;border-radius:10px}
+.agenda-page .agenda-prayer-tile .agenda-prayer-message{padding:0;border:0;border-radius:0;background:transparent;font-size:clamp(18px,2vw,23px);line-height:1.6;color:#253260;margin:0}
+.agenda-page #agenda-proximas>.section>img{width:100%;height:auto;max-height:360px;object-fit:contain;margin-inline:auto;margin-bottom:20px!important}
+.agenda-page #agenda-proximas .group-grid{gap:16px}
+.agenda-page #agenda-proximas .group-card{padding:20px}
+.agenda-page #agenda-proximas .group-card p,.agenda-page #agenda-proximas .card-number{color:#374151}
+.agenda-page main .actions{margin-top:20px!important}
+.agenda-page .agenda-footer{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));align-items:start;gap:28px;padding:32px clamp(20px,5vw,90px);border-top:1px solid #c8d9e5;background:#fff;color:#253260}
+.agenda-page .agenda-footer>div{min-width:0}
+.agenda-page .agenda-footer-identity .brand-horizontal{width:240px;max-width:100%;margin-bottom:16px}
+.agenda-page .agenda-footer-identity p{font-size:15px;line-height:1.6;color:#374151}
+.agenda-page .agenda-footer-group h2{font-size:17px;font-weight:700;line-height:1.4;letter-spacing:0;margin:0 0 12px;color:#253260}
+.agenda-page .agenda-footer-links,.agenda-page .agenda-footer .social-links{display:flex;flex-direction:column;gap:4px}
+.agenda-page .agenda-footer a:not(.brand){display:block;font-size:15px;line-height:1.5;color:#374151;padding-block:9px;overflow-wrap:anywhere}
+.agenda-page .agenda-footer a:not(.brand):hover{text-decoration:underline;text-underline-offset:4px;color:#253260}
+.agenda-page .agenda-footer .copyright{grid-column:1/-1;margin:0;padding-top:16px;color:#374151}
+.agenda-page .jtl-wa-launch{position:static;display:block;width:calc(100% - 40px);max-width:360px;min-height:46px;margin:0 auto calc(20px + env(safe-area-inset-bottom,0px));padding:11px 16px;border-radius:10px;font-size:14px;line-height:1.5;box-shadow:none}
+.agenda-page .group-card,.agenda-page .agenda-footer,.agenda-page .agenda-prayer-tile{overflow-wrap:anywhere}
+@media(max-width:1000px){.agenda-page .agenda-footer{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){
+ .agenda-page main .page-intro{padding-block:20px 16px}
+ .agenda-page .agenda-category-heading{padding-block:20px 14px}
+ .agenda-page .agenda-category .section{padding-block:22px}
+ .agenda-page #encuentros-habituales .group-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+ .agenda-page #encuentros-habituales .group-card,.agenda-page .agenda-prayer-tile{padding:20px}
+ .agenda-page #agenda-proximas>.section>img{max-height:none}
+ .agenda-page .agenda-footer{grid-template-columns:minmax(0,1fr);gap:24px;padding:28px 20px}
+}
+/* Afiches y contacto: ajustes exclusivos de Agenda. */
+.agenda-page #agenda-proximas>.section>img{display:block;width:100%;max-width:800px;height:auto;max-height:none;object-fit:contain;margin-inline:auto}
+.agenda-page .agenda-footer-group .jtl-wa-launch{position:static;width:100%;max-width:280px;min-height:46px;margin:12px 0 0;padding:11px 14px;white-space:normal;overflow-wrap:anywhere;text-align:center}
